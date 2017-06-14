@@ -28,6 +28,33 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: false,
+
+    preprocessors: {
+      '**/*.haml': ['ng-haml2js']
+    },
+
+    files: [
+      '*.js',
+      '*.html',
+      // if you wanna load template files in nested directories, you must use this
+      '**/*.haml'
+    ],
+
+    ngHaml2jsPreprocessor: {
+      // strip this from the file path
+      stripPrefix: 'public/',
+      // prepend this to the
+      prependPrefix: 'served/',
+
+      // or define a custom transform function
+      cacheIdFromPath: function (filepath) {
+        return cacheId;
+      },
+
+      // setting this option will create only a single module that contains templates
+      // from all the files, so you can load them all with module('lynxi-ui')
+      moduleName: 'lynxi-ui'
+    }
   });
 };

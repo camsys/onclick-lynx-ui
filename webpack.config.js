@@ -344,6 +344,10 @@ module.exports = {
         ]
       },
       {
+        "test": /\.hamlc$/,
+        "loaders": ['haml']
+      },
+      {
         "test": /\.haml$/,
         "loaders": ['haml-haml-loader']
       },

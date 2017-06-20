@@ -1,0 +1,14 @@
+<div *ngIf="selected_parent_level_service">
+  <h2>
+    {{selected_parent_level_service.name}} details!
+  </h2>
+
+  <div>
+    <label>name: </label>
+    id: {{selected_parent_level_service.id}}
+  </div>
+  <div>
+    <input [(ngModel)]="selected_parent_level_service.name" placeholder="Name">
+  </div>
+
+</div>

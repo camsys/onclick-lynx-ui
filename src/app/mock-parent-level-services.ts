@@ -2,14 +2,14 @@
 import { ParentLevelService } from './parent-level-service';
 
 export const PARENTLEVELSERVICES: ParentLevelService[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  { Sequence_Nbr: 11, Category_Name: 'Mr. Nice' },
+  { Sequence_Nbr: 12, Category_Name: 'Narco' },
+  { Sequence_Nbr: 13, Category_Name: 'Bombasto' },
+  { Sequence_Nbr: 14, Category_Name: 'Celeritas' },
+  { Sequence_Nbr: 15, Category_Name: 'Magneta' },
+  { Sequence_Nbr: 16, Category_Name: 'RubberMan' },
+  { Sequence_Nbr: 17, Category_Name: 'Dynama' },
+  { Sequence_Nbr: 18, Category_Name: 'Dr IQ' },
+  { Sequence_Nbr: 19, Category_Name: 'Magma' },
+  { Sequence_Nbr: 20, Category_Name: 'Tornado' }
 ];

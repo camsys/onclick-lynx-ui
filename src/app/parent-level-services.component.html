@@ -1,7 +1,10 @@
 <h1 class="nav_title_class">{{title}}</h1>
   <ul class="parent_level_services" >
     <li *ngFor="let parent_level_service of parent_level_services" [class.selected]="parent_level_service === selected_parent_level_service" (click)="onSelect(parent_level_service)">
-      <span class="badge">{{parent_level_service.id}}</span> {{parent_level_service.name}}
+      {{parent_level_service.Category_Name}}
+      <span>
+        >
+      </span>
     </li>
   </ul>
   <parent-level-service-details [selected_parent_level_service]="selected_parent_level_service"></parent-level-service-details>

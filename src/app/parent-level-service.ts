@@ -1,4 +1,4 @@
 export class ParentLevelService {
-  id: number;
-  name: string;
+  Sequence_Nbr: number;
+  Category_Name: string;
 }

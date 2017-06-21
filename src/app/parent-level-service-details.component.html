@@ -1,11 +1,11 @@
 <div *ngIf="selected_parent_level_service">
   <h2>
-    {{selected_parent_level_service.name}} details!
+    {{selected_parent_level_service.Category_Name}} details!
   </h2>
 
   <div>
     <label>name: </label>
-    id: {{selected_parent_level_service.id}}
+    id: {{selected_parent_level_service.Sequence_Nbr}}
   </div>
   <div>
     <input [(ngModel)]="selected_parent_level_service.name" placeholder="Name">

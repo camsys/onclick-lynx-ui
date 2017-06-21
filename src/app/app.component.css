@@ -11,7 +11,7 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  /*width: 15em;*/
 }
 .parent_level_services li {
   cursor: pointer;
@@ -19,10 +19,15 @@
   left: 0;
   background-color: #EEE;
   margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
+  /*padding: .3em 0;*/
+  /*height: 1.6em;*/
+  /*border-radius: 4px;*/
 }
+
+.parent_level_services span {
+
+}
+
 .parent_level_services li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;

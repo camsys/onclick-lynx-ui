@@ -1,23 +1,48 @@
-import { Component, OnInit } from '@angular/core';
-import { ParentLevelService } from './parent-level-service';
-import { ParentLevelServiceService } from './parent-level-service.service';
+import { Component, Input, OnInit }   from '@angular/core';
+import { ActivatedRoute }             from '@angular/router';
+import { Location }                   from '@angular/common';
+
+import 'rxjs/add/operator/switchMap';
+
+import { SubcategoryFor211 }    from './subcategory-for-211';
+import { ReferNet211Service }   from './refer-net-211-services.service';
 
 
 @Component({
-  selector: 'child-level-service',
+  selector: 'child-level-services',
   templateUrl: './child-level-services.component.html',
   styleUrls: ['./app.component.css']
 })
 
 export class ChildLevelServices implements OnInit {
-  title = 'TEST';
-  parent_level_services: ParentLevelService[] = [];
+  constructor(
+    private referNet211ServicesService: ReferNet211Service,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 
-  constructor(private parentLevelServiceService: ParentLevelServiceService) { }
+  @Input() selected_category_name: string;
+  selected_subcategory: SubcategoryFor211;
+  subcategories: SubcategoryFor211[] = [];
 
   ngOnInit(): void {
-    this.parentLevelServiceService.getParentLevelServices()
-      .then(parent_level_services => this.parent_level_services = parent_level_services.slice(1, 5));
+    this.selected_category_name = this.route.snapshot.params['Category_Name']
+
+    if(this.selected_category_name != ''){
+      this.referNet211ServicesService.getSubcategoryForCategoryName(this.selected_category_name).then(subcats => this.subcategories = subcats);
+    }else {
+      console.log("IN ELSE THAT SHOULD BE DELETED");
+      this.selected_category_name = 'Health Care';
+      this.referNet211ServicesService.getSubcategoryForCategoryName(this.selected_category_name).then(subcats => this.subcategories = subcats);
+    }
+  }
+
+  onSelect(subcategory: SubcategoryFor211): void {
+    this.selected_subcategory = subcategory;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

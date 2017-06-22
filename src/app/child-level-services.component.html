@@ -1,8 +1,13 @@
-<h1 class="nav_title_class">{{title}}</h1>
-<div class="grid grid-pad">
-  <div *ngFor="let parent_level_service of parent_level_services" class="col-1-4">
-    <div class="module parent_level_service">
-      <h4>{{parent_level_service.name}}</h4>
+<button (click)="goBack()">Back</button>
+<h1 class="nav_title_class">{{selected_category_name}}</h1>
+<ul class="parent_level_services" >
+  <li *ngFor="let subcategory of subcategories" [class.selected]="subcategory === selected_subcategory" (click)="onSelect(subcategory)">
+    <div *ngIf="subcategory.Subcategory_Name != null">
+      {{subcategory.Subcategory_Name}}
+      <span>
+        >
+      </span>
     </div>
-  </div>
-</div>
+  </li>
+</ul>
+

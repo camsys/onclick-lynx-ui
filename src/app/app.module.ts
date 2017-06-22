@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { RouterModule }   from '@angular/router';
 import { HttpModule }    from '@angular/http';
 
-
+import { AppRoutingModule }     from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ParentLevelServiceDetailsComponent} from "./parent-level-service-details.component";
 import {ParentLevelServices} from "./parent-level-services.component";
-import {ParentLevelServiceService} from "./parent-level-service.service";
+import {ReferNet211Service} from "./refer-net-211-services.service";
 import {ChildLevelServices} from "./child-level-services.component";
 import {Globals} from "./globals";
 
@@ -17,29 +16,15 @@ import {Globals} from "./globals";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        component: ParentLevelServices
-      },
-      {
-        path: 'child',
-        component: ChildLevelServices
-      }
-    ])
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
     ParentLevelServices,
     ParentLevelServiceDetailsComponent,
-    ChildLevelServices
+    ChildLevelServices,
   ],
-  providers: [ParentLevelServiceService, Globals],
+  providers: [ReferNet211Service, Globals],
   bootstrap: [AppComponent]
 })
 

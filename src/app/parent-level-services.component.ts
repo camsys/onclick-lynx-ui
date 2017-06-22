@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { ParentLevelService } from './parent-level-service';
-import { ParentLevelServiceService } from './parent-level-service.service';
+import { ReferNet211Service } from './refer-net-211-services.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { ParentLevelServiceService } from './parent-level-service.service';
 export class ParentLevelServices implements OnInit {
   title = 'Lynx';
 
-  constructor(private parentLevelServiceService: ParentLevelServiceService) { }
+  constructor(private referNet211ServicesService: ReferNet211Service) { }
 
   selected_parent_level_service: ParentLevelService;
   parent_level_services: ParentLevelService[];
@@ -23,7 +23,7 @@ export class ParentLevelServices implements OnInit {
   }
 
   getParentLevelServices(): void {
-    this.parentLevelServiceService.getParentLevelServices().then(parent_services => this.parent_level_services = parent_services);
+    this.referNet211ServicesService.getParentLevelServices().then(parent_services => this.parent_level_services = parent_services);
   }
 
   ngOnInit(): void {

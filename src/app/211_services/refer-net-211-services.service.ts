@@ -14,7 +14,7 @@ import { Headers, Http } from '@angular/http';
 // import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 
-import { ParentLevelService } from './parent-level-service';
+import { CategoryFor211 } from './category-for-211';
 import { SubcategoryFor211 } from './subcategory-for-211';
 
 @Injectable()
@@ -30,12 +30,12 @@ export class ReferNet211Service {
 
   //We are using the promise format over the observable format because we are performing a simple get request and not doing much with the data beyond displaying it.
   //We expect reasonable quick responses from the server and won't likely run into a request-cancel-new-request sequence.
-  getParentLevelServices(): Promise<ParentLevelService[]> {
+  getCategoriesFor211Services(): Promise<CategoryFor211[]> {
     return this.http.get(this.refernetUrl+'Category?API_KEY='+this.api_key+'&DeviceID=')
       .toPromise()
       .then(response => response.text())
       .then(str => this.stripAwayXml(str))
-      .then(jsonable => JSON.parse(jsonable) as ParentLevelService)
+      .then(jsonable => JSON.parse(jsonable) as CategoryFor211)
       .catch(this.handleError);
   }
 

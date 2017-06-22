@@ -10,11 +10,11 @@ import { ReferNet211Service }   from './refer-net-211-services.service';
 
 @Component({
   selector: 'child-level-services',
-  templateUrl: './child-level-services.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './subcategories-for-211.component.html',
+  styleUrls: ['../app.component.css']
 })
 
-export class ChildLevelServices implements OnInit {
+export class SubcategoriesFor211Component implements OnInit {
   constructor(
     private referNet211ServicesService: ReferNet211Service,
     private route: ActivatedRoute,

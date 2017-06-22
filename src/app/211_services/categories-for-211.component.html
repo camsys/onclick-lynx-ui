@@ -1,0 +1,19 @@
+<h1 class="nav_title_class">{{title}}</h1>
+  <!--<div> TODO ADD SEARCH </div>-->
+  <ul class="categroies_for_211" >
+    <li *ngFor="let category of categories"
+        [class.selected]="category === selected_category"
+        [routerLink]="['/211Subcategories/', category.Category_Name]"
+    >
+      {{category.Category_Name}}
+      <span>
+        >
+      </span>
+    </li>
+  </ul>
+
+
+  <!--<child-level-services [selected_category_name]="selected_parent_level_service.Category_Name"></child-level-services>-->
+
+
+

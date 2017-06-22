@@ -1,21 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-
-// import { Observable }        from 'rxjs/Observable';
-// import { Subject }           from 'rxjs/Subject';
-
-// Observable class extensions
-// import 'rxjs/add/observable/of';
-
-// Observable operators
-// import 'rxjs/add/operator/catch';
-// import 'rxjs/add/operator/debounceTime';
-// import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 
-import { CategoryFor211 } from './211_service_categories/category-for-211';
-import { SubcategoryFor211 } from './211_service_subcategories/subcategory-for-211';
+import {CategoryFor211}           from './211_service_categories/category-for-211';
+import {SubcategoryFor211}        from './211_service_subcategories/subcategory-for-211';
+import {SubcategoryLinkFor211}   from './211_service_subcategory_links/subcategory-link-for-211'
 
 @Injectable()
 export class ReferNet211Service {
@@ -44,6 +34,15 @@ export class ReferNet211Service {
       .toPromise()
       .then(response => response.text())
       // .then(r => console.log(r))
+      .then(str => this.stripAwayXml(str))
+      .then(jsonable => JSON.parse(jsonable) as SubcategoryFor211)
+      .catch(this.handleError);
+  }
+
+  getSubcategoryLinkForSubcategoryId(categoryId: number): Promise<SubcategoryLinkFor211[]>{
+    return this.http.get(this.refernetUrl+'SubCat_Links?API_KEY='+this.api_key+'&category_id='+categoryId+'&DeviceID=')
+      .toPromise()
+      .then(response => response.text())
       .then(str => this.stripAwayXml(str))
       .then(jsonable => JSON.parse(jsonable) as SubcategoryFor211)
       .catch(this.handleError);

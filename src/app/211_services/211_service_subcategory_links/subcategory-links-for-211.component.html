@@ -1,0 +1,13 @@
+<button (click)="goBack()">Back</button>
+<h1 class="nav_title_class">{{selected_category_id}}</h1>
+<ul class="categroies_for_211" >
+  <li *ngFor="let subcategory_link of subcategory_links" [class.selected]="subcategory_link === selected_subcategory_link" (click)="onSelect(subcategory_link)">
+    <div *ngIf="subcategory_link.Name != null">
+      {{subcategory_link.Name}}
+      <span>
+        >
+      </span>
+    </div>
+  </li>
+</ul>
+

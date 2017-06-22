@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { CategoryFor211 } from './category-for-211';
-import { ReferNet211Service } from './refer-net-211-services.service';
+import { ReferNet211Service } from '../refer-net-211-services.service';
 
 
 @Component({
   selector: 'my-parent-level-services',
   templateUrl: './categories-for-211.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['../../app.component.css']
 })
 export class CategoriesFor211Component implements OnInit {
   title = 'Lynx';

@@ -5,9 +5,9 @@ import { HttpModule }       from '@angular/http';
 
 import {AppRoutingModule}               from './app-routing.module';
 import {AppComponent}                   from './app.component';
-import {CategoriesFor211Component}      from "./211_services/categories-for-211.component";
+import {CategoriesFor211Component}      from "./211_services/211_service_categories/categories-for-211.component";
 import {ReferNet211Service}             from "./211_services/refer-net-211-services.service";
-import {SubcategoriesFor211Component}   from "./211_services/subcategories-for-211.component";
+import {SubcategoriesFor211Component}   from "./211_services/211_service_subcategories/subcategories-for-211.component";
 import {Globals}                        from "./globals";
 
 @NgModule({

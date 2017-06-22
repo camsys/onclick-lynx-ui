@@ -14,8 +14,8 @@ import { Headers, Http } from '@angular/http';
 // import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 
-import { CategoryFor211 } from './category-for-211';
-import { SubcategoryFor211 } from './subcategory-for-211';
+import { CategoryFor211 } from './211_service_categories/category-for-211';
+import { SubcategoryFor211 } from './211_service_subcategories/subcategory-for-211';
 
 @Injectable()
 export class ReferNet211Service {

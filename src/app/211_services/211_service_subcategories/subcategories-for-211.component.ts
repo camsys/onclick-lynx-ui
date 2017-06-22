@@ -5,13 +5,13 @@ import { Location }                   from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 import { SubcategoryFor211 }    from './subcategory-for-211';
-import { ReferNet211Service }   from './refer-net-211-services.service';
+import { ReferNet211Service }   from '../refer-net-211-services.service';
 
 
 @Component({
   selector: 'child-level-services',
   templateUrl: './subcategories-for-211.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['../../app.component.css']
 })
 
 export class SubcategoriesFor211Component implements OnInit {

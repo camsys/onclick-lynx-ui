@@ -4,8 +4,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {CategoriesFor211Component}      from './211_services/categories-for-211.component';
-import {SubcategoriesFor211Component}   from './211_services/subcategories-for-211.component';
+import {CategoriesFor211Component}      from './211_services/211_service_categories/categories-for-211.component';
+import {SubcategoriesFor211Component}   from './211_services/211_service_subcategories/subcategories-for-211.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },

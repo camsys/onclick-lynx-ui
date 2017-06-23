@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import {CategoryFor211}           from './211_service_categories/category-for-211';
 import {SubcategoryFor211}        from './211_service_subcategories/subcategory-for-211';
 import {SubcategoryLinkFor211}   from './211_service_subcategory_links/subcategory-link-for-211'
+import {MatchListFor211}   from './211_services_match_lists/match-list-for-211'
 
 @Injectable()
 export class ReferNet211Service {
@@ -21,7 +22,9 @@ export class ReferNet211Service {
   //We are using the promise format over the observable format because we are performing a simple get request and not doing much with the data beyond displaying it.
   //We expect reasonable quick responses from the server and won't likely run into a request-cancel-new-request sequence.
   getCategoriesFor211Services(): Promise<CategoryFor211[]> {
-    return this.http.get(this.refernetUrl+'Category?API_KEY='+this.api_key+'&DeviceID=')
+    var uri: string = encodeURI(this.refernetUrl+'Category?API_KEY='+this.api_key+'&DeviceID=');
+
+    return this.http.get(uri)
       .toPromise()
       .then(response => response.text())
       .then(str => this.stripAwayXml(str))
@@ -30,7 +33,9 @@ export class ReferNet211Service {
   }
 
   getSubcategoryForCategoryName(categoryName: string): Promise<SubcategoryFor211[]> {
-    return this.http.get(this.refernetUrl+'Sub_Category?API_KEY='+this.api_key+'&category_name='+categoryName+'&DeviceID=')
+    var uri: string = encodeURI(this.refernetUrl+'Sub_Category?API_KEY='+this.api_key+'&category_name='+categoryName+'&DeviceID=');
+
+    return this.http.get(uri)
       .toPromise()
       .then(response => response.text())
       // .then(r => console.log(r))
@@ -40,7 +45,10 @@ export class ReferNet211Service {
   }
 
   getSubcategoryLinkForSubcategoryId(categoryId: number): Promise<SubcategoryLinkFor211[]>{
-    return this.http.get(this.refernetUrl+'SubCat_Links?API_KEY='+this.api_key+'&category_id='+categoryId+'&DeviceID=')
+
+    var uri: string = encodeURI(this.refernetUrl+'SubCat_Links?API_KEY='+this.api_key+'&category_id='+categoryId+'&DeviceID=');
+
+    return this.http.get(uri)
       .toPromise()
       .then(response => response.text())
       .then(str => this.stripAwayXml(str))
@@ -48,6 +56,20 @@ export class ReferNet211Service {
       .catch(this.handleError);
   }
 
+  // getMatchListForSubcategoryLinkNameAndCounty(subcategroyLinkName: string, countyId: number): Promise<SubcategoryLinkFor211[]>{
+  getMatchListForSubcategoryLinkNameAndCountyCode(subcategroyLinkName: string, countyCode: number): Promise<MatchListFor211[]>{
+
+    var uri: string = encodeURI(this.refernetUrl+'MatchList?API_KEY='+this.api_key+'&zip='+'&searchterm='+subcategroyLinkName+'&county_id='+countyCode+'&DeviceID=');
+
+    console.log(uri);
+
+    return this.http.get(uri)
+      .toPromise()
+      .then(response => response.text())
+      .then(str => this.stripAwayXml(str))
+      .then(jsonable => JSON.parse(jsonable) as MatchListFor211)
+      .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
     console.log(error);
@@ -65,6 +87,8 @@ export class ReferNet211Service {
     {
       jsonable_text = xml.substring(start_of_json, end_of_json+2);
     }
+
+    console.log(jsonable_text);
 
     return jsonable_text;
   }

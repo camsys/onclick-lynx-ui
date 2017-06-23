@@ -9,12 +9,12 @@ import { ReferNet211Service }   from '../refer-net-211-services.service';
 
 
 @Component({
-  selector: 'child-level-services',
+  selector: 'subcategory-links-for-211',
   templateUrl: './subcategory-links-for-211.component.html',
   styleUrls: ['../../app.component.css']
 })
 
-export class SubcategoriLinksFor211Component implements OnInit {
+export class SubcategoryLinksFor211Component implements OnInit {
   constructor(
     private referNet211ServicesService: ReferNet211Service,
     private route: ActivatedRoute,
@@ -28,7 +28,7 @@ export class SubcategoriLinksFor211Component implements OnInit {
   ngOnInit(): void {
     this.selected_category_id = +this.route.snapshot.params['Category_ID'];
 
-    if(this.selected_category_id >- -1){
+    if(this.selected_category_id > -1){
       this.referNet211ServicesService.getSubcategoryLinkForSubcategoryId(this.selected_category_id).then(subcat_linkss => this.subcategory_links = subcat_linkss);
     }
   }

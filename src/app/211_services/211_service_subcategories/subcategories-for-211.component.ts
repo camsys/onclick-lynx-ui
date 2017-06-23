@@ -9,7 +9,7 @@ import { ReferNet211Service }   from '../refer-net-211-services.service';
 
 
 @Component({
-  selector: 'child-level-services',
+  selector: 'subcategories-for-211',
   templateUrl: './subcategories-for-211.component.html',
   styleUrls: ['../../app.component.css']
 })

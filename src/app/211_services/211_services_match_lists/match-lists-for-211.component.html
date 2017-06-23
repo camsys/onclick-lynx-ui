@@ -1,0 +1,13 @@
+<button (click)="goBack()">Back</button>
+<h1 class="nav_title_class">{{link_name}}</h1>
+<ul class="categroies_for_211" >
+  <li *ngFor="let match_list of match_lists">
+    <div *ngIf="match_list.Name_Agency != null">
+      {{match_list.Name_Agency}}
+      <span>
+        >
+      </span>
+    </div>
+  </li>
+</ul>
+

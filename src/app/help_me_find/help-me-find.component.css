@@ -14,7 +14,7 @@
   padding-bottom: 5em;
   color: #1A1A1A;
   text-align: center;
-  opacity: .7;
+  opacity: .8;
 }
 
 .h1, .lynx_pink_header_1{
@@ -30,10 +30,12 @@
   color: white;
 }
 
-.btn-default, .btn-help_me_find, .btn-help_me_find{
+.btn-default, .btn-help_me_find{
   position: relative;
   top: -15em;
-  color: white;
+  color: #B52B83;
   border-color: white;
+  background-color: white;
   margin-top: 1em;
+  border-radius: 20px
 }

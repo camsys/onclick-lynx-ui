@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component }    from '@angular/core';
+import { OnInit }       from '@angular/core';
+import { Location }     from '@angular/common';
 
 import { CategoryFor211 } from './category-for-211';
 import { ReferNet211Service } from '../refer-net-211-services.service';
@@ -13,7 +14,10 @@ import { ReferNet211Service } from '../refer-net-211-services.service';
 export class CategoriesFor211Component implements OnInit {
   title = 'Lynx';
 
-  constructor(private referNet211ServicesService: ReferNet211Service) { }
+  constructor(
+    private referNet211ServicesService: ReferNet211Service,
+    private location: Location
+  ) { }
 
   selected_category: CategoryFor211;
   categories: CategoryFor211[];
@@ -28,6 +32,10 @@ export class CategoriesFor211Component implements OnInit {
 
   ngOnInit(): void {
     this.getParentLevelServices();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
 

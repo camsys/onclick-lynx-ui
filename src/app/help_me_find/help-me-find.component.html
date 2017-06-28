@@ -1,10 +1,33 @@
 
-<h1>{{title}}</h1>
-<h1>Help me find</h1>
+<div class="find_me_help_background_div">
+  <div class="col-12">
+    <span class="col-2"></span>
+    <span class="col-8">
+      <div class="help_me_find_container">
+      </div>
 
-<nav>
-  <a routerLink="/211Categories">Helpful Resources</a>
-</nav>
-<nav>
-  <a routerLink="/211Categories">Transportation (Reroutes to helpful resorces because nothing has been built for transportation)</a>
-</nav>
+        <h1 class="lynx_pink_header_1">{{title}}</h1>
+        <h3 class="lynx_pink_header_3">Welcome to Lynx.</h3>
+        <h3 class="lynx_pink_header_3">What can we help you with?</h3>
+
+        <div class="col-sm-12 text-center">
+          <div class="text-center">
+            <nav>
+              <button type="button" class="btn btn-round-primary btn-help_me_find" [routerLink]="['/211Categories']">Helpful Resources</button>
+              <!--<a routerLink="/211Categories">Helpful Resources</a>-->
+            </nav>
+          </div>
+
+          <div class="text-center">
+            <nav>
+              <button type="button" class="btn btn-primary btn-help_me_find" [routerLink]="['/211Categories']">Transportation (NOT DONE)</button>
+            </nav>
+          </div>
+        </div>
+
+    </span>
+    <span class="col-2"></span>
+
+  </div>
+
+</div>

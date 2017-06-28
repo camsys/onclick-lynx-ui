@@ -1,0 +1,39 @@
+
+.find_me_help_background_div{
+  background-image: url('./backgroud_image.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
+.container, .help_me_find_container{
+  background-color: #B52B83;
+  height: 19em;
+  padding-top: 15em;
+  padding-bottom: 5em;
+  color: #1A1A1A;
+  text-align: center;
+  opacity: .7;
+}
+
+.h1, .lynx_pink_header_1{
+  text-align: center;
+  position: relative;
+  top: -7em;
+  color: white;
+}
+.h3, .lynx_pink_header_3{
+  text-align: center;
+  position: relative;
+  top: -9em;
+  color: white;
+}
+
+.btn-default, .btn-help_me_find, .btn-help_me_find{
+  position: relative;
+  top: -15em;
+  color: white;
+  border-color: white;
+  margin-top: 1em;
+}

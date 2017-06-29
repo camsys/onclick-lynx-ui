@@ -6,6 +6,9 @@
   background-attachment: fixed;
 }
 
+.hamburger{
+  color: white;
+}
 
 .container, .help_me_find_container{
   background-color: #B52B83;

@@ -1,5 +1,5 @@
-<button (click)="goBack()">Back</button>
-<h1 class="nav_title_class">{{title}}</h1>
+<button (click)="goBack()">BACK</button>
+<h1 class="nav_title_class">{{title}}  <i class="fa fa-map-signs" aria-hidden="true"></i></h1>
   <!--TODO include search option-->
   <ul class="categroies_for_211" >
     <li *ngFor="let category of categories"
@@ -8,7 +8,7 @@
     >
       {{category.Category_Name}}
       <span>
-        >
+        <i class="fa fa-map-signs" aria-hidden="true"></i>
       </span>
     </li>
   </ul>

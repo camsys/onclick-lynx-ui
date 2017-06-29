@@ -1,5 +1,20 @@
-<button (click)="goBack()">BACK</button>
-<h1 class="nav_title_class">{{title}}  <i class="fa fa-map-signs" aria-hidden="true"></i></h1>
+
+<div class="row">
+  <div class="col-sm-1 back_black_nav_column">
+    <i class="fa fa-arrow-left fa-3x" aria-hidden="true" (click)="goBack()"></i>
+  </div>
+  <div class="col-sm-10 center_black_nav_column">
+    <h1 class="black_nav_title_class"> <i class="fa fa-paw fa-1x" aria-hidden="true"></i> &nbsp; {{title}} </h1>
+  </div>
+  <div class="col-sm-1 burger_black_nav_column"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></div>
+</div>
+<div class="row">
+  <div class="col-sm-10 center_black_nav_column">
+    <h1 class="black_nav_title_class"> <i class="fa fa-paw fa-1x" aria-hidden="true"></i> &nbsp; {{title}} </h1>
+  </div>
+</div>
+
+
   <!--TODO include search option-->
   <ul class="categroies_for_211" >
     <li *ngFor="let category of categories"

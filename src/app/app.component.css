@@ -1,8 +1,41 @@
-.nav_title_class{
+/*NAV BAR section of CSS*/
+.back_black_nav_column{
+  background-color: #1A1A1A;
+  text-align: center;
+  color: white;
+}
+.center_black_nav_column{
   background-color: #1A1A1A;
   color: #B52B83;
   text-align: center;
 }
+.burger_black_nav_column{
+  background-color: #1A1A1A;
+  text-align: center;
+  color: white;
+}
+
+.back_pink_nav_column{
+  background-color: #B52B83;
+  text-align: center;
+  color: white;
+}
+.center_pink_nav_column{
+  background-color: #B52B83;
+  color: white;
+  text-align: center;
+}
+.burger_pink_nav_column{
+  background-color: #B52B83;
+  text-align: center;
+  color: white;
+}
+
+.nav_title_class{
+  text-align: center;
+}
+
+/*211 Service listing and selection css.*/
 .selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -18,16 +51,8 @@
   position: relative;
   left: 0;
   background-color: #EEE;
-  margin: .5em;
-  /*padding: .3em 0;*/
-  /*height: 1.6em;*/
-  /*border-radius: 4px;*/
+  border-bottom: 1px solid black;
 }
-
-.categroies_for_211 span {
-
-}
-
 .categroies_for_211 li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;

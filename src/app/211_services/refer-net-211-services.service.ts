@@ -38,7 +38,6 @@ export class ReferNet211Service {
     return this.http.get(uri)
       .toPromise()
       .then(response => response.text())
-      // .then(r => console.log(r))
       .then(str => this.stripAwayXml(str))
       .then(jsonable => JSON.parse(jsonable) as SubcategoryFor211)
       .catch(this.handleError);
